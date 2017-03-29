@@ -76,7 +76,6 @@
  */
 .site-search .search-icon { /* [1] */
   @include bp(screen-md) {
-    // @include symphony-custom-sprite($search);
     top: 50%;
     left: auto;
     right: 0;

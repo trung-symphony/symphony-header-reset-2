@@ -41,7 +41,6 @@ $search-height: 51px;
       background: #FAFAFA;
 
       &:before {
-        // @include symphony-custom-sprite($search);
         content: '';
         position: absolute;
         top: 50%;
@@ -77,7 +76,6 @@ $search-height: 51px;
 
 
     .navbar-mobile .search-expand .search-icon {
-      // @include symphony-custom-sprite($search);
       position: relative;
       transform: scale(0.6);
 

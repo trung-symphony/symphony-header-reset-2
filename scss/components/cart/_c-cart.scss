@@ -1,30 +1,5 @@
 /* === CART - SM === */
 
-/*
-    [2] Remove the second unused icon
-*/
-.navbar-mobile .mobile-cart-btn {
-    // @include bp(screen-max-md) {
-    //     @include layer(mobile-cart-btn);
-    //     position: absolute;
-    //     top: 50%;
-    //     right: 20px;
-    //     transform: translateY(-50%);
-    //     display: block;
-    //     height: auto;
-    //     background: none; /* [2] */ 
-
-    //     &:before {
-    //         @include symphony-custom-sprite($cart);
-    //         content: '';
-    //         position: absolute;
-    //         top: 50%;
-    //         left: 50%;
-    //         transform: translate(-50%, -50%) scale(0.63);
-    //         z-index: -1;
-    //     }
-    // } 
-}
 
 
     .navbar-mobile .mobile-cart-btn .cart-count {
@@ -144,16 +119,15 @@
     }
 }
 
-    .header-section .cart .count-container {
-        @include bp(screen-md) {
-            @include symphony-custom-sprite($cart);
-            position: absolute;
-            top: 45%;
-            transform: translate(0, -50%) scale(0.5);
-            background-color: transparent;
-            overflow: visible;
-        }
-    }
+    // .header-section .cart .count-container {
+    //     @include bp(screen-md) {
+    //         position: absolute;
+    //         top: 45%;
+    //         transform: translate(0, -50%) scale(0.5);
+    //         background-color: transparent;
+    //         overflow: visible;
+    //     }
+    // }
         
         // Cart Count
         .header-section .cart .count-container .count {
