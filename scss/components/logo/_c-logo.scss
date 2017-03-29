@@ -1,0 +1,45 @@
+   // mobile-logo__logo
+  .header-brand-name {
+      @include layer(logo);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: auto; 
+      height: auto !important;
+      line-height: 0 !important;
+      margin: 0 !important;
+
+      background: transparent !important;
+  } 
+       
+
+       // mobile-logo__logo__img
+      .header-brand-name > img {
+          width: nth($site-logo-width, 1);
+          margin: 0 !important;
+      }
+
+
+      // big-screen-logo
+      .sticky-logo {
+        @include bp(screen-md) {
+            @include layer(logo);
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translate(0, -50%);
+            display: inline-block;
+        }
+    }
+      
+      .sticky-logo img,
+      .header-section .sticky-logo {
+          @include bp(screen-md) {
+              width: nth($site-logo-width, 2);
+              overflow: hidden;
+          }
+      } 
+
+

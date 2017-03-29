@@ -1,0 +1,83 @@
+//=============================================
+// CONFIG
+//=============================================
+
+
+/* === HEADER === */
+/*
+    @Options
+        * @option   {1, 2}   [switch between theme]
+ */
+$site-header-theme: 2;
+
+$site-header-height-sm: 80px;
+$site-header-bg-sm: $brand-2;
+
+
+        /* === SITE HEADER (BIG SCREEN) === */
+        $site-header-height-md: 90px;
+        $site-header-bg-md: $gray-7;
+
+
+
+/* === LOGO === */
+$site-logo-width: 40px, 125px;
+
+
+
+/* === PROMO-BANNER === */
+/* 
+    @Options
+        * @Option 1   boolean   [show/hide]
+ */
+$site-promo-banner-sm: false;
+
+$site-promo-banner-height: 40px;
+$site-promo-banner-height-sm: 40px;
+
+$site-promo-banner-bg: $brand-1;
+
+$site-promo-banner__text-color: $gray-7;
+
+/* 
+    @Options
+        * @Option 1   number + unit   [target sm screen]
+        * @Option 2   number + unit   [target md screen]
+        * @Option 3   number + unit   [target lg screen]
+ */
+$site-promo-banner__text-size: 12px, 12px, 13px; 
+
+
+        /* === PROMO-BANNER (BIG SCREEN) === */
+        $site-promo-banner-md: true;
+        
+        $site-promo-banner-height-md: 40px;
+
+
+
+
+
+/* === MENU === */
+$site-menu-link-bg-sm: $gray-7;
+$site-menu-link-color-sm: $brand-2;
+
+$site-menu-link-bg-sm--hover: $gray-7;
+$site-menu-link-color-sm--hover: $brand-1;
+
+$site-menu-link-bg-sm--active: $brand-1;
+$site-menu-link-color-sm--active: $gray-7;
+
+/* 
+    @Target second-level menu
+ */
+$site-menu-link-bg-sm--secondary: $gray-6;
+$site-menu-link-color-sm--secondary: $gray-1;
+$site-menu-link-bg-sm--secondary--hover: $gray-6;
+$site-menu-link-color-sm--secondary--hover: $brand-1;
+
+
+        /* === MENU (BIG SCREEN) === */
+        $site-menu-link-color-md: $gray-2;
+        $site-menu-link-bg--hover: $gray-7;
+        $site-menu-link-color--hover: $brand-1;
+

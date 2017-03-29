@@ -1,0 +1,22 @@
+//==============================================================================
+// Platform modals on the page
+//==============================================================================
+
+// RESET
+.login-modal > .modal-dialog {
+    padding: 15px;
+
+    @include bp(screen-sm) {
+        padding: 20px;
+    }
+}
+
+// Close icon
+.login-modal > .modal-dialog .close {
+    right: -24px !important;
+    top: -24px !important;
+}
+
+.login-modal input[name="email"] {
+    background-image :url("/static/images/sites/login-email.png") white;
+}

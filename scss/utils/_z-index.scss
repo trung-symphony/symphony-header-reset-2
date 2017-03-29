@@ -1,0 +1,24 @@
+$z-layers: (
+  site-header: 1030,
+  site-header-mobile: 1000,
+  modal: 15000,
+  site-search: 1100,
+  logo: 1000,
+  account-dropdown-menu: 1140,
+  verify-email-banner: 1000,
+  promotion-banner: 900,
+  mobile-cart-btn: 1000,
+  cart-dropdown: 50000,
+  big-screen-cart-container: 10000,
+  p-checkout-site-nav: 11000,
+  back-to-top: 1000,
+  product-confirm-checkout: 1100,
+  c-subscription-pop-up: 2000,
+  site-overlay: 1500,
+  sp-footer-subscription-success-message: 2000
+) !default;
+
+@mixin layer($layer-name) {
+  z-index: map-get($z-layers, $layer-name);
+};
+

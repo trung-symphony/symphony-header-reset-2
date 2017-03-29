@@ -1,0 +1,244 @@
+/* ----
+   Mega Dropdown
+   ----------------------------------
+ */ 
+
+ /* Reset
+ --------------------- */
+
+ /*
+   [1] Reduce menu height
+  */
+ .header-section .affix-top .togglemenu,
+ .header-section .affix .togglemenu,
+ .header-section .togglemenu {
+   @include bp(screen-md) {
+     padding: 0; /* [1] */
+   }
+ }
+
+
+.navbar .nav-collapse .top-nav > li, .navbar .navbar-collapse .top-nav > li {
+  position: static;
+}
+
+.navbar .nav-collapse .top-nav > li > .menu-dropdown,
+.navbar .navbar-collapse .top-nav > li > .menu-dropdown {
+  @include bp(screen-md) {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #E5E5E5;
+    text-align: left;
+  }
+}
+
+    .navbar .nav-collapse .top-nav > li:hover > .menu-dropdown > .menu-dropdown__container > li,
+    .navbar .navbar-collapse .top-nav > li:hover > .menu-dropdown > .menu-dropdown__container > li {
+      @include bp(screen-md) {
+        display: inline-block;
+        vertical-align: top;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    .navbar .navbar-collapse .top-nav > li:hover > .menu-dropdown > .menu-dropdown__container > li > .menu-dropover,
+    .navbar .nav-collapse .top-nav > li:hover > .menu-dropdown > .menu-dropdown__container > li > .menu-dropover
+    {
+        @include bp(screen-md) {
+            position: relative;
+            left: 0;
+            display: inline-block !important;
+            width: 100%;
+            padding: 0;
+            background-color: transparent;
+        }
+    }
+
+     .navbar .navbar-collapse .top-nav > li > .menu-dropdown > .menu-dropdown__container > li > .menu-dropover > li,
+     .navbar .nav-collapse .top-nav > li > .menu-dropdown > .menu-dropdown__container > li > .menu-dropover > li {
+        @include bp(screen-md) {
+          padding: 0;
+        }
+     }
+
+     .nested-nav-arrow-container {
+      @include bp(screen-md) {
+        display: none;
+      }
+    }
+
+
+
+
+
+// Style
+// -----------------------
+.top-nav.nested-menu-mobile {
+    @include bp(screen-md) {
+        position: relative;
+        height: 100%;
+    }
+}
+
+
+.header-section .togglemenu .top-nav .togglemenu-across {
+    @include bp(screen-md) {
+        height: 100%;
+        padding: 0;
+        border: 1px solid transparent;
+
+        a {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0 15px;
+            @include setFontSize(12px, 12px, 13px);
+
+            @include attention {
+                background: transparent;
+            }
+        }
+    }
+
+    @include bp(screen-min-max-md) {
+        a {
+            padding: 0 8px 5px;
+        }
+    }
+}
+
+// Menu Link (lg)
+.header-section .togglemenu .top-nav li a {
+    @include bp(screen-md) {
+        color: $site-menu-link-color-md;
+    }
+}
+
+
+
+.menu-dropdown__container {
+  width: 1310px;
+  margin: 0 auto;
+}
+
+
+
+.navbar .nav-collapse .top-nav > li > .menu-dropdown,
+.navbar .navbar-collapse .top-nav > li > .menu-dropdown {
+  @include bp(screen-md) {
+    padding: 10px 20px;
+    background: $gray-7;
+    cursor: auto;
+    text-align: left;
+  }
+}
+
+    .navbar .navbar-collapse .top-nav > li > .menu-dropdown > .menu-dropdown__container > li > .menu-dropover > li:hover,
+    .navbar .nav-collapse .top-nav > li > .menu-dropdown > .menu-dropdown__container > li > .menu-dropover > li:hover {
+      background: transparent;
+      text-decoration: underline;
+    }
+    
+
+    /* 
+        @Target Hovered - Menu Link Background 
+     */
+    .header-section .togglemenu .top-nav li:hover {
+        background: $site-menu-link-bg--hover;
+    }
+    
+
+    /* 
+        @Target Hovered - Menu Link Color
+     */
+    .header-section .togglemenu .top-nav li:hover a {
+        color: $site-menu-link-color--hover;
+    }
+
+
+    .navbar .navbar-collapse .menu-dropover .menu-dropdown__container li a,
+     .navbar .nav-collapse .menu-dropover .menu-dropdown__container li a {
+      text-transform: capitalize;
+      @include setFontSize(12px, 14px, 14px);
+    }
+
+
+    .navbar .navbar-collapse .top-nav>li:hover>.menu-dropdown>.menu-dropdown__container>li,
+    .navbar .nav-collapse .top-nav>li:hover>.menu-dropdown>.menu-dropdown__container>li {
+      position: relative;
+      margin-right: 90px;
+      text-align: left;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+
+
+    .navbar .navbar-collapse .menu-dropover,
+    .navbar .nav-collapse .menu-dropover {
+      @include bp(screen-md) {
+        position: relative;
+        margin: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: -15px;
+          top: -30px;
+          width: 1px;
+          height: calc(100% + 30px);
+          background: #E2E2E2;
+        }
+      }
+     }
+
+    .navbar .navbar-collapse .top-nav>li:hover>.menu-dropdown>.menu-dropdown__container>li:nth-child(2) .menu-dropover,
+    .navbar .nav-collapse .top-nav>li:hover>.menu-dropdown>.menu-dropdown__container>li:nth-child(2) .menu-dropover {
+      &:before {
+        content: normal;
+      }
+    }
+
+
+    // Dropdown Menu Links
+    .navbar .navbar-collapse .top-nav > li > .menu-dropdown a,
+    .navbar .nav-collapse .top-nav > li > .menu-dropdown a {
+      @include bp(screen-md) {
+        line-height: 25px;
+        padding: 0 35px 0 15px;
+        text-transform: capitalize;
+        font-variant: normal;
+        font-size: 14px;
+      }
+
+      @include bp(screen-xlg) {
+        padding: 0 50px 0 15px;
+      }
+    }
+
+
+    // Dropdown Header
+    .navbar .navbar-collapse .top-nav > li > .menu-dropdown > .menu-dropdown__container > li > a:first-child,
+    .navbar .nav-collapse .top-nav > li > .menu-dropdown > .menu-dropdown__container > li > a:first-child {
+      @include bp(screen-md) {
+        margin-bottom: 10px;
+        @include setFontSize(12px, 12px, 13px);
+      }
+    }
+
+
+    .navbar .nav-collapse .top-nav>li>.menu-dropdown,
+    .navbar .navbar-collapse .top-nav>li>.menu-dropdown {
+      @include bp(screen-md) {
+        border-bottom-color: $brand-1;
+        padding: 20px 20px 60px;
+        white-space: normal;
+      }
+    }

@@ -1,0 +1,39 @@
+/* === BREAKPOINTS === */
+
+$breakpoints: (
+    "screen-sm"   "screen and (min-width: 450px)",
+    "screen-max-sm"  "screen and (max-width: 480px)",
+    "screen-md"       "screen and (min-width: 768px)",
+    "screen-max-md"       "screen and (max-width: 767px)",
+    "screen-lg"       "screen and (min-width: 900px)",
+    "screen-xlg"    "screen and (min-width: 1100px)",
+    "screen-xxlg"    "screen and (min-width: 1400px)",
+
+    // Target IE10+
+    "ie" "screen and (-ms-high-contrast: active), (-ms-high-contrast: none)"
+
+    // Uncomment this when need Retina
+    // "retina"              "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+) !default;
+
+
+
+
+
+//------------------------------------------------------------------------------
+// Breakpoint
+//------------------------------------------------------------------------------
+@mixin bp($point) {
+
+  // Loop through pre-defined breakpoints located in
+  // globals/settings/responsive-setting
+  @each $breakpoint in $breakpoints {
+    $alias:     nth($breakpoint, 1);
+    $condition: nth($breakpoint, 2);
+
+    @if $point == $alias {
+      @media #{$condition} { @content; }
+    }
+
+  }
+}

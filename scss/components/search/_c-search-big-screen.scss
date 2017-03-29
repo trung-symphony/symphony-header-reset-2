@@ -1,0 +1,161 @@
+/*******************************************************************************
+* Search Module (Big Screen)
+*******************************************************************************/
+
+// Search Module
+/*
+  [1] Right align the Search Module
+ */
+.sticky-nav .site-search-expander  {
+    @include bp(screen-md) {
+        position: absolute; /* [1] */
+        top: 50%; /* [1] */
+        right: 10px; /* [1] */
+        transform: translate(0, -50%); /* [1] */
+        width: 200px;
+        @include layer(site-search);
+    }
+}
+
+
+.header-section .affix-top .search-expand,
+.header-section .affix .search-expand,
+.header-section .search-expand {
+    @include bp(screen-md) {
+        position: static;
+        padding: 0;
+    }
+}
+
+
+// Close Icon
+/*
+  [1] Hide the "close icon" that overlapped with the search button
+ */
+.sticky-nav .site-search-expander .search-close {
+    @include bp(screen-md) {
+        display: none; /* [1] */
+    }
+}
+
+
+// Search Field
+/*
+  [1] The search field was hidden be default. This line is added to show the field. !important is used to force the override.
+ */
+.sticky-nav .site-search-expander.ng-hide {
+    @include bp(screen-md) {
+        display: block !important; /* [1] */
+    }
+}
+
+.site-search form {
+    font-size: medium;
+}
+
+
+// Search Field
+/*
+  [1] Style the field
+ */
+.sticky-nav .site-search-expander input { /* [1] */
+  @include bp(screen-md) {
+    height: 30px !important;
+    padding: 0 30px 0 10px;
+    background: $gray-7;
+    border: 1px solid #ccc;
+    font-style: normal;
+    @include setFontSize(12px, 12px, 13px);
+  }
+}
+
+
+// Search Button
+/*
+  [1] Rules applied are for positioning and size
+ */
+.site-search .search-icon { /* [1] */
+  @include bp(screen-md) {
+    // @include symphony-custom-sprite($search);
+    top: 50%;
+    left: auto;
+    right: 0;
+    transform: translate(0, -50%) scale(0.4);
+    margin: 0;
+  }
+}
+
+.site-search .search-icon:before {
+  content: '';
+}
+
+
+.header-section .affix-top .search-expand .search-expand,
+.header-section .affix .search-expand .search-expand,
+.header-section .affix-top .site-search-expander + .search-expand,
+.header-section .affix .site-search-expander + .search-expand {
+  @include bp(screen-md) {
+    display: none;
+  }
+}
+
+.header-section .search-expand.hidden-xs .search-icon:before,
+.header-section .search-expand.hidden-phone .search-icon:before
+ {
+  @include bp(screen-md) {
+    content: "";
+  }
+}
+
+
+
+
+//==============================================================================
+// Search Drop-down
+//==============================================================================
+
+// Drop-down List Item
+/*
+  [1] Re-position the list item and change width
+ */
+.site-search .typeahead { /* [1] */
+  @include bp(screen-md) {
+    left: auto !important;
+    right: 0;
+    width: 435px;
+    margin: 0;
+    @include setFontSize(12px, 12px, 13px);
+  }
+}
+
+/*
+  [1] Change style for active state
+ */
+.site-search .typeahead > li.active > a {
+  background: $gray-5; /* [1] */
+}
+
+
+// List Item Image
+/*
+  [1] Change image size
+ */
+.site-search .typeahead .typeahead-image {
+  width: 40px; /* [1] */
+  height: auto;
+}
+
+
+// Make result texts uppercase
+.site-search{
+  ul.typeahead{
+     // search results in caps
+    li{
+      //no text-transform for first line "Show all results..."
+      &:first-of-type .typeahead-name{
+        font-variant: normal;
+        text-transform: capitalize;
+      }
+    } //li
+  }
+}//.site-search

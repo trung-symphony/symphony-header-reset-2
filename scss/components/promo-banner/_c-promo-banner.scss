@@ -1,0 +1,108 @@
+//==============================================================================
+// Promo Banner
+//==============================================================================
+
+/*
+  [1] Hide extra Promo Banner
+ */
+ .invisible .promo-banner {
+   display: none; /* [1] */
+ }
+
+
+.promo-banner {
+    padding: 0;
+    background-color: transparent;
+    opacity: 1;
+    @include layer(promotion-banner);
+}
+
+
+// [1] Hide mobile promo-banner
+.promo-banner__container {
+  @include setFontSizeFromMap($site-promo-banner__text-size);
+  height: $site-promo-banner-height-sm;
+  line-height: $site-promo-banner-height-sm;
+  background: $site-promo-banner-bg;
+
+  font-family: $custom-font;
+  font-weight: $regular;
+  text-align: left;
+  font-style: normal;
+  color: $site-promo-banner__text-color;
+
+  @include bp(screen-max-md) {
+    display: $site-promo-banner-display-sm; /* [1] */
+  }
+
+  @include bp(screen-md) {
+    height: $site-promo-banner-height-md;
+    line-height: $site-promo-banner-height-md;
+    display: $site-promo-banner-display-md;
+  }
+}
+
+
+.promo-banner__box {
+    @extend .sp-l-constrained-width;
+    position: relative;
+    
+    @include bp(screen-md) {
+        background: $site-promo-banner-bg;
+    }
+}
+
+
+.promo-banner__container--primary {
+  position: relative;
+  padding-left: 0;
+  text-align: center;
+
+  @include bp(screen-md) {
+    padding-left: 20px;
+    text-align: left;
+  }
+}
+
+
+.navbar.navbar-static-top .promo-banner {
+    position: relative !important;
+}
+
+
+// Hide Extra Promotion & Email Verification Banner
+.header-mobile > .invisible {
+  @include bp(screen-max-md) {
+    display: none !important; 
+  }
+}
+
+.header-mobile .sub-hanging .verify-banner {
+  @include bp(screen-max-md) {
+    width: 100%;
+    height: $site-header-height-sm;
+  }
+}
+
+
+.navbar-mobile.sub-hanging {
+    @include bp(screen-max-md) {
+        top: $site-header-height-sm;
+    }
+}
+
+
+// Promo Banner
+.navbar-mobile.sub-hanging {
+  @include bp(screen-max-md) {
+    margin-top: 0;
+  }
+}
+
+.navbar.navbar-static-top .promo-banner {
+  @include bp(screen-max-md) {
+    position: relative !important;
+  }
+}
+
+

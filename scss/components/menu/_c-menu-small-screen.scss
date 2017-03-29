@@ -1,0 +1,222 @@
+/* ----
+   Reset
+   ----------------------------------
+ */
+.nested-menu-mobile .panel-heading {
+  margin-bottom: 0;
+}
+
+// Hide menu item "Home"
+ .nested-menu-mobile > .panel-heading:first-child {
+    @include bp(screen-max-md) {
+        display: none;
+    }
+ }
+
+ /* [1] Push menu down based on menu's height */
+.navbar .navbar-collapse,
+.navbar .nav-collapse {
+   @include bp(screen-max-md) {
+     top: $site-header-height-sm; /* [1] */
+     padding: 0;
+   }
+}
+
+
+/*  
+    @Target Top Level Link Container  
+        [1] Remove default border from  
+*/
+.nested-menu-mobile .panel-heading {
+    border: none; /* [1] */
+}
+
+
+/*  @Target Menu Link Dropdown Icon */
+.nested-menu-mobile .collapsed .open-close-arrow-container {
+  @include bp(screen-max-md) {
+    background: transparent;
+  }
+}
+
+.nested-menu-mobile .open-close-arrow-container,
+.nested-menu-mobile .nesting-level-two .collapsed .open-close-arrow-container {
+  @include bp(screen-max-md) {
+    background: transparent;
+  }
+}
+
+
+
+
+
+
+/* ----
+   Mobile Menu
+   ----------------------------------
+ */
+/*  
+    @Target Small Menu
+        [1] Change Menu Background
+*/
+.navbar .navbar-collapse,
+.navbar .nav-collapse {
+  @include bp(screen-max-md) {
+    background: $gray-7; /* [1] */
+  }
+ }
+
+
+/* 
+    @Target Top Level Menu Links 
+*/
+.navbar .navbar-collapse .nav li a,
+.navbar .nav-collapse .nav li a,
+.nested-menu-mobile .panel-heading a,
+.nested-menu-mobile .panel-heading .panel-title a {
+   @include bp(screen-max-md) {
+     padding: 15px 30px;
+     line-height: 25px;
+     background: $site-menu-link-bg-sm;
+     color: $site-menu-link-color-sm;
+     text-transform: capitalize;
+     font-weight: $book;
+     font-variant: normal;
+     font-size: 16px;
+
+     @include attention() {
+        background: $site-menu-link-bg-sm--hover;
+        color: $site-menu-link-color-sm--hover;
+        text-decoration: none;
+     }
+   }
+ }
+
+
+
+/* 
+    @Target Menu Link Dropdown Icon 
+*/
+.nested-menu-mobile .collapsed .open-close-arrow-container .open-close-arrow,
+.nested-menu-mobile .open-close-arrow {
+    @include bp(screen-max-md) {
+        width: 6px;
+        height: 6px;
+        border-color: $site-menu-icon-color;
+   }
+}
+
+
+
+    /* 
+        @Target Active state for links with children
+     */
+    #nested-menu-container-one  > .panel > .panel-heading > .panel-title > a[data-toggle="collapse"],
+    .acct-menu  > .panel-heading > .panel-title > a[data-toggle="collapse"] {
+      background: $site-menu-link-bg-sm--active !important;
+      color: $site-menu-link-color-sm--active;
+
+      > .open-close-arrow-container .open-close-arrow {
+        border-color: $site-menu-link-color-sm--active;
+      }
+    }
+    
+    
+    /* 
+        @Target Account Menu Link
+     */
+    #nested-menu-container-one  > .panel > .panel-heading > .panel-title > a[data-toggle="collapse"].collapsed,
+    .acct-menu  > .panel-heading > .panel-title > a[data-toggle="collapse"].collapsed
+     {
+      background: $site-menu-link-bg-sm !important;
+      color: $site-menu-link-color-sm;
+
+      &:hover {
+        color: $site-menu-link-color-sm--hover;
+      }
+
+      > .open-close-arrow-container .open-close-arrow {
+        border-color: $brand-1;
+      }
+    }
+
+
+
+
+    // Second Menu Level
+    #nested-menu-container-two  > .panel > .panel-heading > .panel-title > a[data-toggle="collapse"] {
+      background: #E5E5E5 !important;
+    }
+
+    #nested-menu-container-two  > .panel > .panel-heading > .panel-title > a[data-toggle="collapse"].collapsed {
+      background: $gray-7 !important;
+    }
+
+    #nested-menu-container-two .panel-heading {
+      margin: 0;
+    }
+
+
+
+        /* 
+            @Target First Children of Menu Link
+                [1] Override platform default
+        */
+        #nested-menu-container-two .panel-heading a,
+        #acct-menu-dropdown .nesting-level-two .panel-heading a {
+          @include bp(screen-max-md) {
+            border: none;
+            padding-left: 50px;
+            background: $site-menu-link-bg-sm--secondary;
+            font-size: 16px;
+            color: $site-menu-link-color-sm--secondary;
+
+            @include attention() {
+              background: $site-menu-link-bg-sm--secondary--hover !important; /* [1] */
+              color: $site-menu-link-color-sm--secondary--hover !important; /* [1] */
+            }
+          }
+        }
+
+
+
+        #nested-menu-container-two .panel-heading a:active {
+          background: $gray-7 !important;
+          color: $brand-1;
+        }
+
+
+
+
+
+.nesting-level-two  .panel,
+.acct-menu .nesting-level-two {
+   margin: 0;
+}
+
+
+ // Shop Header
+.navbar .navbar-collapse h2,
+.navbar .nav-collapse h2 {
+  display:  none;
+}
+
+
+/* Remove padding for menu item */
+ .navbar .navbar-collapse ul.nav,
+ .navbar .nav-collapse ul.nav, 
+ .nested-menu-mobile,
+ .nested-menu-mobile .panel {
+    @include bp(screen-max-md) {
+        padding-bottom: 0;
+        margin: 0;
+        border-bottom: none;
+    }
+ }
+
+
+ .navbar .nav-collapse .nested-menu-mobile li {
+    @include bp(screen-max-md) {
+        margin-bottom: 0;
+    }
+ }

@@ -1,0 +1,147 @@
+//=============================================
+// DEFAULT CONFIG
+//=============================================
+
+
+/* === HEADER === */
+/*
+    @Options
+        * @option   {1, 2}   [switch between theme]
+ */
+$site-header-theme: 1 !default;
+$site-header-height: 50px !default;
+$site-header-bg: white !default;
+
+$site-header-height-sm: $site-header-height !default;
+$site-header-spacing-sm: $site-header-height-sm !default;
+$site-header-bg-sm: $site-header-bg !default;
+
+
+        /* === HEADER (BIG SCREEN) === */
+        $site-header-height-md: $site-header-height !default;
+        $site-header-spacing-md: $site-header-height-md !default;
+        $site-header-bg-md: $site-header-bg !default;
+
+
+
+
+
+/* === LOGO === */
+$site-logo-width: 65px, 120px !default;
+
+
+
+
+
+/* === PROMO-BANNER === */
+// If $promoBanner is set to "true" for either "sm" or "md", remember to create a "promoBanner" element in Manage's Page Elements.
+$site-promo-banner-sm: false !default;
+$site-promo-banner-display-sm: none !default;
+
+$site-promo-banner-height: 0 !default;
+$site-promo-banner-height-sm: 0 !default;
+
+$site-promo-banner-bg: $brand-1 !default;
+$site-promo-banner__text-color: $gray-7 !default;
+
+/* 
+    @Options
+        * @Option 1   number + unit   [target sm screen]
+        * @Option 2   number + unit   [target md screen]
+        * @Option 3   number + unit   [target lg screen]
+ */
+$site-promo-banner__text-size: 12px, 12px, 13px !default; 
+
+
+        /* === PROMO-BANNER (BIG SCREEN) === */
+        $site-promo-banner-md: false !default;
+        $site-promo-banner-display-md: none !default;
+        $site-promo-banner-height-md: 0 !default;
+
+
+
+
+
+/* === ACCOUNT === */
+$site-account-height-md: $site-header-height-md !default;
+
+
+
+
+
+/* === CART === */
+$site-cart-height-md: $site-header-height-md !default;
+
+
+
+
+
+/* === MENU === */
+$site-menu-link-bg-sm: $gray-7 !default;
+$site-menu-link-color-sm: $brand-2 !default;
+
+$site-menu-link-bg-sm--hover: $gray-7 !default;
+$site-menu-link-color-sm--hover: $brand-1 !default;
+
+$site-menu-link-bg-sm--active: $brand-1 !default;
+$site-menu-link-color-sm--active: $gray-7 !default;
+
+/* 
+    @Target second-level menu
+ */
+$site-menu-link-bg-sm--secondary: $gray-6 !default;
+$site-menu-link-color-sm--secondary: $gray-1 !default;
+$site-menu-link-bg-sm--secondary--hover: $gray-6 !default;
+$site-menu-link-color-sm--secondary--hover: $brand-1 !default;
+
+$site-menu-icon-color: #333 !default;
+
+
+        /* === MENU (BIG SCREEN) === */
+        $site-menu-link-color-md: $gray-2 !default;
+        $site-menu-link-bg--hover: $gray-7 !default;
+        $site-menu-link-color--hover: $brand-1 !default;
+        
+
+
+
+
+/** 
+ * [1] Header has position fixed with "top" positioning depends on promo-banner height. 
+ */
+@if ( $site-promo-banner-height-sm == 0 and $site-promo-banner-height-md == 0 ) {
+    $site-promo-banner-height-sm: $site-promo-banner-height;
+    $site-promo-banner-height-md: $site-promo-banner-height;
+}
+
+@if ( $site-promo-banner-sm == true ) {
+    $site-promo-banner-display-sm: block;
+    $site-header-spacing-sm: $site-promo-banner-height-sm + $site-header-height-sm;
+}
+
+@if ( $site-promo-banner-md == false ) {
+    $site-promo-banner-height-md: 0;
+}
+
+@if ( $site-promo-banner-md == true ) {
+    $site-promo-banner-display-md: block;
+    $site-header-spacing-md: $site-promo-banner-height-md + $site-header-height-md;
+}
+
+@if ( $site-header-theme == 2 ) {
+    $site-account-height-md: $site-promo-banner-height-md;
+    $site-cart-height-md: $site-promo-banner-height-md;
+
+    // Cart Component
+    .sticky-nav .header-cart .cart,
+    .sticky-nav .header-login > li:first-child > a,
+    .sticky-nav .meta-nav.nav.header-login .account {
+        top: -$site-promo-banner-height-md !important;
+        transform: translateY(0) !important;
+    }
+}
+
+@if ( $site-header-theme == 2 and $site-promo-banner-md == false ) {
+    $site-account-height-md: $site-header-height-md;
+    $site-cart-height-md: $site-header-height-md;
+}

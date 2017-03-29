@@ -1,0 +1,103 @@
+$search-height: 51px;
+
+.navbar-mobile .site-search-container {
+  @include bp(screen-max-md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    @include layer(site-search);
+  }
+}
+
+.navbar-mobile .site-search-container .site-search {
+  @include bp(screen-max-md) {
+    border-bottom: 1px solid $gray-5;
+  }
+}
+
+
+
+    // Search Input
+    .navbar-mobile .site-search-container .site-search input {
+      height: $search-height;
+      padding: 0 50px 0 50px;
+      background: $gray-7;
+      font-style: normal;
+    }
+
+    // Search Icon
+    /*
+      [1] Line-height value is magic number and is depended on the Icon's height
+     */
+    .navbar-mobile .site-search-container.site-search-expander .search-icon {
+      position: fixed;
+      top: 0;
+      left: 15px;
+      margin-top: 0;
+      height: $search-height;
+      background: #FAFAFA;
+
+      &:before {
+        // @include symphony-custom-sprite($search);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+    }
+
+    .navbar-mobile .search-expand {
+      @include bp(screen-max-md) {
+        top: 50%;
+        right: 60px;
+        transform: translateY(-50%);
+        height: 48px;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    .site-search-container .search-close {
+      @include bp(screen-max-md) {
+        top: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+        padding: 17px !important;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    // Search Button
+
+
+    .navbar-mobile .search-expand .search-icon {
+      // @include symphony-custom-sprite($search);
+      position: relative;
+      transform: scale(0.6);
+
+      &:before {
+        content: '';
+      }
+    }
+
+
+    // On Cart Page, search-button is re-located
+    .slug-cart {
+      .navbar-mobile .search-expand {
+        @include bp(screen-max-md) {
+          top: 20px;
+        }
+      }
+
+          .navbar-mobile .search-expand .search-icon {
+            @include bp(screen-max-md) {
+              top: 6px;
+            }
+          }
+    }

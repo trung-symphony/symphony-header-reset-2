@@ -1,0 +1,291 @@
+/* ----
+   Move body down "xx" pixel
+   ----------------------------------
+ */
+body {
+    padding-top: $site-header-spacing-sm; 
+
+    @include bp(screen-md) {
+        padding-top: $site-header-spacing-md - 1px; 
+    }
+}
+
+
+.header-section {
+  @include bp(screen-md) {
+     width: 100%;
+  }
+}
+
+
+
+.header-section header.affix-top,
+.header-section header {
+  @include bp(screen-md) {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+
+
+.header-section header.affix-top .sticky-nav,
+.header-section header .sticky-nav  {
+  @include bp(screen-md) {
+    @include layer(site-header);
+    position: fixed;
+    top: 0;
+  } 
+} 
+
+
+
+.header-section .affix-top .header-login,
+.header-section .affix-top .header-cart,
+.header-section.header-login,
+.header-section.header-cart {
+  @include bp(screen-max-md) {
+    display: none;
+  }
+}
+
+
+
+.header-section .affix-top .togglemenu,
+.header-section .togglemenu {
+  @include bp(screen-md) {
+     display: block;
+     margin: 0;
+  }
+}
+
+
+
+.header-section .affix-top .togglemenu ul.top-nav,
+.header-section .togglemenu ul.top-nav  {
+  @include bp(screen-md) {
+     min-width: none;
+  }
+}
+
+
+
+.header-section .affix-top .sticky-logo,
+.header-section .sticky-logo {
+  @include bp(screen-md) {
+     display: table-cell;
+  }
+}
+
+
+
+.header-section .affix-top .header-login a,
+.header-section .header-login a  {
+  @include bp(screen-md) {
+     line-height: 18px !important; 
+     background: none;
+  }
+}
+
+
+.header-section .affix-top .togglemenu,
+.header-section .togglemenu {
+  @include bp(screen-md) {
+     padding: 15px 0;
+  }
+}
+
+
+
+.header-section .affix-top .search-expand,
+.header-section  .search-expand {
+  display: table-cell;
+}
+
+.header-section .affix .search-expand {
+  @include bp(screen-min-max-md) {
+    display: table-cell;
+  }
+}
+
+
+.header-section .affix-top .search-expand,
+.header-section .search-expand {
+  @include bp(screen-md) {
+    padding: 0 5px 0 15px;
+  }
+}
+
+
+.affix-top .sticky-nav .site-search-expander {
+  @include bp(screen-md) {
+    display: block;
+  }
+}
+
+
+.affix .sticky-nav .site-search-expander {
+  @include bp(screen-min-max-md) {
+    display: block;
+  }
+}
+
+
+.header-section .affix-top .header-login, .header-section .affix-top .header-cart,
+.header-section .header-login, .header-section .affix-top .header-cart {
+  @include bp(screen-md) {
+    display: table-cell;
+  }
+}
+
+.header-section .affix .header-login, 
+.header-section .affix .header-cart {
+  @include bp(screen-min-max-md) {
+    display: table-cell;
+  }
+}
+
+
+.navbar-collapse.ng-hide {
+  @include bp(screen-md) {
+    display: block !important;
+  }
+}
+
+
+.affix-top .sticky-nav .togglemenu {
+  @include bp(screen-md) {
+    display: block !important;
+  }
+}
+
+
+.header-section .affix .togglemenu ul.top-nav {
+  @include bp(screen-md) {
+    min-width: auto;
+  }
+}
+
+
+.header-section .affix .togglemenu ul.top-nav {
+  @include bp(screen-md) {
+    max-width: none;
+  }
+}
+
+.header-primary {
+  @include bp(screen-md) {
+    display: none;
+  }
+}
+
+
+.header-mobile {
+  @include bp(screen-md) {
+    display: none;
+  }
+}
+
+
+.navbar.navbar-static-top.affix-top,
+.navbar.navbar-static-top.affix {
+  border: 0;
+}
+
+
+/* 
+  NOTE: .menu-dropdown__container is created by jQuery so when start a new project, remove it
+ */
+
+
+// Remove "Shop All" in bigger screen
+.menu-dropdown > .menu-dropdown__container >li > a.visible-tablet,
+.menu-dropdown > .menu-dropdown__container >li > a.visible-sm {
+  @include bp(screen-md) {
+    display: none !important;
+  }
+} 
+
+// Since Shop All (first menu item) is hidden, remove the unnecessary border top
+.menu-dropdown > .menu-dropdown__container > li:nth-child(2) {
+  border: none;
+}
+
+
+// Remove Shop All (second menu item)
+.navbar .navbar-collapse .top-nav>li>.menu-dropdown>.menu-dropdown__container>li>.menu-dropover>li:nth-child(1),
+.navbar .nav-collapse .top-nav>li>.menu-dropdown>.menu-dropdown__container>li>.menu-dropover>li:nth-child(1)
+ {
+  @include bp(screen-md) {
+    display: none;
+  }
+}
+
+
+// Remove Home item on the navigation
+.navbar .navbar-collapse .top-nav>li:first-child, 
+.navbar .nav-collapse .top-nav>li:first-child {
+  @include bp(screen-md) {
+    display: none;
+  }
+}
+
+
+
+.header-section .affix {
+  position: relative;
+  top: 0;
+}
+
+
+// Remove cut-off header from Log Out Modal
+.logout-modal .modal-header, 
+.password-modal .modal-header {
+  @include bp(screen-md) {
+    height: 60px;
+  }
+}
+
+
+
+
+
+/* ----
+   Added to Cart banner
+   ----------------------------------
+ */
+
+// Hide Added To Cart Banner
+.header-section {
+  @include layer(site-header);
+  position: relative;
+}
+
+.cart-dropdown-phone {
+  display: none !important;
+  z-index: -1;
+
+  &.down {
+    display: block !important;
+  }
+}
+
+
+
+
+
+/* ----
+   Prevent Flashing of elements on header
+   ----------------------------------
+ */
+.header-section .sticky-nav .togglemenu,
+.sticky-logo,
+.dropdown.account,
+.sticky-nav .header-cart .cart,
+.sticky-nav .site-search-expander {
+  opacity: 0;
+
+  &.is-active {
+    opacity: 1;
+  }
+} 

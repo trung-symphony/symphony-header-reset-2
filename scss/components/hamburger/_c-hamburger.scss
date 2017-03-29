@@ -1,0 +1,28 @@
+.navbar-mobile .btn-navbar {
+    @include bp(screen-max-md) {
+        padding: 0 20px;
+    }
+}
+
+/* === HAMBURGER SLICES === */
+.navbar .btn-navbar .icon-bar,
+.navbar .navbar-toggle .icon-bar {
+    background: $hamburger-color;
+}
+
+
+/* 
+    COMPOSE
+ */
+.navbar-mobile .navbar-toggle {
+    height: $site-header-height-sm;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+    @include bp(screen-max-md) {
+        margin-top: 3px;
+    }
+}
+

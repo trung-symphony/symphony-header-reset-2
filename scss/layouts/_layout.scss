@@ -1,0 +1,10 @@
+.sp-l-constrained-width
+ {
+  width: 100%;
+  padding: 0 20px;
+
+  @include bp(screen-md) {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}

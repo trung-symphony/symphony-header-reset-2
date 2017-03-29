@@ -1,0 +1,40 @@
+$sprite-image: url('../images/sprite.png?66fc7ef68f9f56e0a2b340f5f6cfe1fe3c850a0b') !default;
+$Instagram: -0px -0px 48px 48px !default;
+$cart: -48px -0px 48px 48px !default;
+$facebook: -0px -48px 48px 48px !default;
+$pinterest: -48px -48px 48px 48px !default;
+$placeholder: -96px -48px 9px 9px !default;
+$twitter: -96px -0px 48px 48px !default;
+@mixin sprite-width($sprite) {
+    width: nth($sprite, 3);
+}
+@mixin sprite-height($sprite) {
+    height: nth($sprite, 4);
+}
+@function sprite-width($sprite) {
+     @return nth($sprite, 3);
+}
+@function sprite-height($sprite) {
+     @return nth($sprite, 4);
+}
+@mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 1);
+    $sprite-offset-y: nth($sprite, 2);
+    background-position: $sprite-offset-x $sprite-offset-y;
+}
+@mixin sprite($sprite, $display: block) {
+     @include sprite-position($sprite);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: $display;
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+}
+
+//-----------------
+// Custom Sprites
+//-----------------
+@mixin symphony-custom-sprite($sprite) {
+    @include sprite($sprite);
+    background-image: $sprite-image;
+}

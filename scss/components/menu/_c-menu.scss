@@ -1,0 +1,37 @@
+/* RESET */
+
+
+// dropdown 
+.navbar .navbar-collapse,
+.navbar .nav-collapse {
+  border-top: none;
+  box-shadow: none;
+
+  @include bp(screen-md) {
+    height: 100% !important;
+    transition: none;
+  }
+}
+
+
+.panel-default > .panel-heading + .panel-collapse .panel-body {
+  border-top: none;
+}
+
+.panel-collapse .panel-body {
+  padding: 0;
+}
+
+.nested-menu-mobile .panel {
+  border-radius: 0;
+}
+
+
+
+
+
+// Hide Home
+.sticky-nav .nav-collapse:first-child > .nested-menu-mobile  > .panel-heading,
+.sticky-nav .navbar-collapse:first-child > .nested-menu-mobile  > .panel-heading {
+  display: none;
+}

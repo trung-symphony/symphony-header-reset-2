@@ -1,0 +1,30 @@
+/* === CART CONFIGURATION === */
+
+/**
+ * @desc config the count on cart/bag on small screen
+ */
+$cart-count-color-sm: $gray-7 !default;
+$cart-count-bg-sm: $brand-1 !default;
+
+
+/**
+ * @desc config the count on cart/bag on big screen
+ */
+$cart-count-color-md: $gray-7 !default;
+$cart-count-bg-md: darken($brand-1, 15%) !default;
+
+
+/**
+ * @desc config the cart label on the header
+ */
+$cart-label-color: $gray-7 !default;
+
+
+/**
+ * @desc config the cart dropdown
+ */
+$cart-dropdown-bg: $brand-1 !default;
+$cart-dropdown-border: darken($cart-dropdown-bg, 5%) !default;
+
+$cart-dropdown__checkout-btn-bg: $brand-3 !default;
+$cart-dropdown__checkout-btn-text-color: $gray-7 !default;

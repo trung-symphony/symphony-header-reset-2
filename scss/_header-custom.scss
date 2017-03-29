@@ -1,0 +1,72 @@
+/**
+ * Header Custom Style 
+ *
+ * @desc styles here are different for
+ *       each brand
+ */
+
+
+.header-mobile.container {
+  padding: 0;
+}
+
+
+/**
+ * Header Container
+ *
+ * @desc top parent container that
+ *       contains other containers
+ *       (e.g. logo, cart, account, search)
+ */
+.header-section header.affix-top .sticky-nav,
+.header-section header .sticky-nav,
+.header-section header.affix .sticky-nav {
+  @include bp(screen-md) {
+    @include layer(site-header);
+    left: 50%;
+    top: $site-promo-banner-height-md;
+    transform: translateX(-50%);
+    width: 100%;
+    padding:  0;
+
+    // SKIN
+    background: $site-header-bg-md;
+  }
+}
+
+
+/**
+ * Site Header - sm
+ */
+.navbar-mobile:nth-child(1) {
+    height: $site-header-height-sm;
+    background: $site-header-bg-sm;
+    border-bottom: 1px solid lighten($site-header-bg-sm, 4%);
+}
+
+.header-mobile {
+    @include bp(screen-max-md) {
+        position: fixed;
+        height: $site-header-height-sm;
+        top: 0;
+    }
+}
+
+
+/**
+ * [1] Push menu to the right (away from logo) by "x" px
+ */
+.sticky-nav__container {
+  @extend .sp-l-constrained-width;
+
+  @include bp(screen-md) {
+    position: relative;
+    height: $site-header-height-md;
+    padding: 0 0 0 160px; /* [1] */
+  }
+}
+
+
+
+
+

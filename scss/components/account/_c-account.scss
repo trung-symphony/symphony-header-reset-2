@@ -1,0 +1,169 @@
+@import 'config';
+
+
+/* Login Label */
+.sticky-nav .header-login > li:first-child > a,
+.sticky-nav .meta-nav.nav.header-login .account {
+    @include bp(screen-md) {
+        @include setFontSize(12px, 12px, 13px);
+        position: absolute;
+        top: 50%;
+        right: 80px;
+        transform: translateY(-50%);
+        height: $site-account-height-md;
+        line-height: $site-account-height-md !important;
+        color: $account-label-color;
+    }
+}
+
+
+
+
+
+// After logging in
+.sticky-nav .meta-nav.nav.header-login {
+  @include layer(account-dropdown-menu);
+  position: static;
+}
+
+.sticky-nav .meta-nav.nav.header-login > li:first-child {
+  position: static;
+}
+
+    .sticky-nav .meta-nav.nav.header-login .account-dropdown {
+      border: none;
+      box-shadow: 0 0 2px rgba(0,0,0,0.2);
+
+      @include bp(screen-md) {
+        @include layer(account-dropdown-menu);
+      }
+    }
+        
+        // Login Dropdown
+        .sticky-nav .meta-nav.nav.header-login .account-dropdown a {
+          @include bp(screen-md) {
+            padding: 10px 35px;
+            border-bottom: 1px solid $account-drop-down-link-border-color-md;
+            background: $account-drop-down-link-bg-md;
+            color: $account-drop-down-link-color-md;
+ 
+            @include attention() {
+              background: $account-drop-down-link-bg-md--hover;
+              color: $account-drop-down-link-color-md--hover;
+            }
+          }
+        } 
+
+    .sticky-nav .meta-nav.nav.header-login .arrow {
+      margin-left: 3px;
+      font-size: 9px;
+    }
+
+    // Account Name
+    .sticky-nav  .account-name {
+      @include bp(screen-md) {
+        display: inline-block;
+        width: 150px;
+        vertical-align: top;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+
+
+
+
+/*
+    LOG IN MODAL
+ */
+
+// Modal Input Field
+#loginModal input[type="email"],
+#loginModal input[type="password"],
+#loginModal input[type="text"] {
+  margin-bottom: 10px;
+  border: 1px solid #999;
+}
+
+// Modal Header
+.login-modal .modal-header {
+  height: auto;
+  padding: 10px 0 0;
+}
+
+    .login-modal .modal-header h3,
+    .password-modal .modal-header h3,
+    .logout-modal .modal-header h3 {
+          text-transform: uppercase;
+      @include setFontSize(16px, 16px, 18px);
+    }
+
+    // Close Button
+    #loginModal .modal-header button.close {
+      @include bp(screen-max-sm) {
+        top: -15px;
+        right: -15px;
+      }
+    }
+
+//Modal Body
+.login-modal .dark-link {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: $account__modal__link-color;
+}
+
+
+
+
+
+/*
+  Verification banner
+    Shown when users don't verify their account
+ */
+.navbar .verify-banner,
+.navbar-mobile .verify-banner {
+  padding: 8px;
+  background: $account-verification-banner-bg;
+  opacity: 1;
+  text-align: center;
+  color: $account-verification-banner__text-color;
+
+  @include bp(screen-md) {
+    @include layer(verify-email-banner);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+  }
+}
+
+    .navbar .verify-banner a {
+      color: $account-verification-banner__link-color;
+      text-decoration: underline;
+      @include setFontSize(12px, 14px, 14px);
+    }
+
+    .navbar .verify-banner a.hidden-phone {
+      display: inline-block !important;
+
+      @include bp(screen-md) {
+        display: none !important;
+      }
+    }
+
+    .navbar .verify-banner a.visible-phone {
+      display: none !important;
+
+      @include bp(screen-md) {
+        display: inline-block !important;
+      }
+    }
+
+.navbar.navbar-static-top .top-hanging {
+  @include layer(verify-email-banner);
+}

@@ -1,0 +1,21 @@
+/* === FONT-SIZE === */
+
+@mixin setFontSize($size, $size-md, $size-lg) {
+  font-size: $size;
+
+  @include bp(screen-md) {
+    font-size: $size-md;
+  }
+
+  @include bp(screen-lg) {
+    font-size: $size-lg;
+  }
+}
+
+@mixin setFontSizeFromMap($size) {
+    $fontSizeSm: nth($size, 1);
+    $fontSizeMd: nth($size, 2);
+    $fontSizeLg: nth($size, 3);
+
+    @include setFontSize($fontSizeSm, $fontSizeMd, $fontSizeLg);
+}
